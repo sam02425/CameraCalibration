@@ -1,6 +1,6 @@
 # Camera Calibration
-> 集合了相机标定相关的多个脚本工具，便于完成完整的车载环视相机标定流程  
-> 各代码文件均可单独使用，此外也提供了外部接口以供调用  
+> It integrates multiple script tools related to camera calibration to facilitate the completion of a complete vehicle surround view camera calibration process.  
+> Each code file can be used independently, and external interfaces are also provided for calling 
   
 ![](https://img.shields.io/badge/Language-python-blue.svg) 　
 ![](https://img.shields.io/badge/Requirement-openCV-brightgreen) 　
@@ -10,8 +10,8 @@
 ![DEMO](demo.gif)
 
 ## Quick Start
-克隆该仓库，运行main.py查看简单示例结果  
-确保已经安装好**opencv(>=3.4.2)** 以及**numpy(>=1.19.2)** 
+Clone the repository and run main.py to view the simple example results  
+Make sure you have installed **opencv(>=3.4.2)** and **numpy(>=1.19.2)**
 ```
 git clone https://github.com/dyfcalid/CameraCalibration.git
 cd ./CameraCalibration
@@ -19,51 +19,51 @@ python main.py
 ```  
   
 ## File Tree  
-> 项目结构预览  
+> Project structure preview  
 ```
-│  main.py                    // 主程序
+│  main.py                    // main program
 │
 ├─ExtrinsicCalibration
-│  │  extrinsicCalib.ipynb    // 外参标定代码(含注释)
-│  │  extrinsicCalib.py       // 外参标定python代码
-│  │  README.md               // 外参标定文档
-│  │  __init__.py             // init文件，API说明
+│  │  extrinsicCalib.ipynb    // External parameter calibration code (including comments)
+│  │  extrinsicCalib.py       // External parameter calibration python code
+│  │  README.md               // External parameter calibration document
+│  │  __init__.py             // init file, API description
 │  │
-│  └─data                     // 外参标定数据文件夹
+│  └─data                     // External parameter calibration data folder
 │
 ├─IntrinsicCalibration
-│  │  intrinsicCalib.ipynb    // 内参标定代码(含注释)
-│  │  intrinsicCalib.py       // 内参标定python代码
-│  │  README.md               // 内参标定文档
-│  │  __init__.py             // init文件，API说明
+│  │  intrinsicCalib.ipynb    // Internal parameter calibration code (including comments)
+│  │  intrinsicCalib.py       // Internal parameter calibration python code
+│  │  README.md               // Internal reference calibration document
+│  │  __init__.py             // init file, API description
 │  │
-│  └─data                     // 内参标定数据文件夹
+│  └─data                     // Internal reference calibration data folder
 │
 ├─SurroundBirdEyeView
-│  │  surroundBEV.ipynb       // 环视鸟瞰代码(含注释)
-│  │  surroundBEV.py          // 环视鸟瞰python代码
-│  │  README.md               // 环视鸟瞰文档
-│  │  __init__.py             // init文件，API说明
+│  │  surroundBEV.ipynb       // Look around the code (with comments)
+│  │  surroundBEV.py          // A bird's eye view of python code
+│  │  README.md               // Look around the document
+│  │  __init__.py             // init file, API description
 │  │
-│  └─data                     // 环视鸟瞰参数文件夹
-│     ├─front                 // 存放前相机K、D、H参数文件
-│     ├─back                  // 存放后相机K、D、H参数文件
-│     ├─left                  // 存放左相机K、D、H参数文件
-│     └─right                 // 存放右相机K、D、H参数文件
+│  └─data                     // Look around the bird's eye view parameter folder
+│     ├─front                 // Store front camera K, D, H parameter files
+│     ├─back                  // Store the rear camera K, D, H parameter files
+│     ├─left                  // Store left camera K, D, H parameter files
+│     └─right                 // Store the K, D, H parameter files of the right camera
 │
-└─Tools                       // 一些相关的标定工具
-    │  collect.py             // 图像采集
-    │  undistort.py           // 图像去畸变
-    └─data                    // 数据文件夹
+└─Tools                       // Some related calibration tools
+    │  collect.py             // Image Acquisition
+    │  undistort.py           // Image dedistortion
+    └─data                    // data folder
 
 ```
 
   
 ## Camera Intrinsic Calibration 
-> 相机内参标定   
+> Camera internal parameter calibration   
   
-`intrinsicCalib.py`  [查看文档](./IntrinsicCalibration/README.md/)  
-包括相机的**在线标定**和**离线标定**，包含**鱼眼相机**和**普通相机**模型，  
+`intrinsicCalib.py`  [View documentation](./IntrinsicCalibration/README.md/)  
+Including **online calibration** and **offline calibration** of the camera, including **fisheye camera** and **ordinary camera** models，  
 并支持**相机、视频、图像**三种输入，生成相机内参和畸变向量   
 
 - 可以直接运行python文件，并通过argparse输入更多参数，argparse参数表详见文档
